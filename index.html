@@ -1,15 +1,84 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title> Chat Site</title>
-  </head>
-  <body>
-    <h1>Welcome to My Website!</h1>
-    <p>live  chat.</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momcilo WebChat Site</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
 
-<!--Gorgias Chat Widget Start-->
-<script id="gorgias-chat-widget-install-v3" 
-    src="https://config.gorgias.chat/bundle-loader/01JQ6PVFD7M8DFFJ76D5V19H9B">
+    header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    #ball {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 60px;
+      right: 30px;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .arrow::after {
+      content: "\2193"; /* Down arrow */
+      display: block;
+      font-size: 3rem;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+  </style>
+</head>
+<body>
+  <header>Momcilo WebChat Site</header>
+  <div id="ball"></div>
+  <div class="arrow">Click to chat</div>
+
+  <script>
+    const ball = document.getElementById("ball");
+    let x = 100, y = 100;
+    let dx = 2, dy = 2;
+
+    function animate() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      x += dx;
+      y += dy;
+
+      if (x < 0 || x + 40 > width) dx = -dx;
+      if (y < 0 || y + 40 > height) dy = -dy;
+
+      ball.style.left = x + "px";
+      ball.style.top = y + "px";
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
 </script>
 <!--Gorgias Chat Widget End-->
 
