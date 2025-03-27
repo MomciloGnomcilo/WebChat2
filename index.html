@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Momcilo WebChat Site</title>
-</head>
   <style>
     body {
       margin: 0;
@@ -41,7 +40,7 @@
     }
 
     .arrow::after {
-      content: "\2193"; /* Down arrow */
+      content: "↓"; /* Down arrow */
       display: block;
       font-size: 3rem;
       animation: bounce 1s infinite;
@@ -52,16 +51,13 @@
       50% { transform: translateY(10px); }
     }
   </style>
+</head>
 <body>
   <header>Momcilo WebChat Site</header>
   <div id="ball"></div>
   <div class="arrow">Click to chat</div>
-<!--Gorgias Chat Widget End-->
 
-<!--Bundle Start-->
-<script src="https://bundle.dyn-rev.app/loader.js?g_cvt_id=942f3e13-7c29-4979-ac08-582ab0e81af1" async></script>
-<!--Bundle End-->
-  </body>
+  <!-- Moving Ball Script -->
   <script>
     const ball = document.getElementById("ball");
     let x = 100, y = 100;
@@ -84,16 +80,14 @@
     }
 
     animate();
-</script>
+  </script>
 
-  
-<!--Gorgias Chat Widget Start-->
-<script id="gorgias-chat-widget-install-v3" 
+  <!-- Gorgias Chat Widget -->
+  <script id="gorgias-chat-widget-install-v3" 
     src="https://config.gorgias.chat/bundle-loader/01JQ6PVFD7M8DFFJ76D5V19H9B">
-</script>
-<!--Gorgias Chat Widget End-->
+  </script>
 
-<!--Bundle Start-->
-<script src="https://bundle.dyn-rev.app/loader.js?g_cvt_id=942f3e13-7c29-4979-ac08-582ab0e81af1" async></script>
-<!--Bundle End-->
+  <!-- Optional: Bundle Script (if needed for anything else) -->
+  <script src="https://bundle.dyn-rev.app/loader.js?g_cvt_id=942f3e13-7c29-4979-ac08-582ab0e81af1" async></script>
+</body>
 </html>
